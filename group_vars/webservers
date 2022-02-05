@@ -1,0 +1,6 @@
+#variables for the webservers group
+ username:
+      test1:
+        uname: test1
+        description: Test User Accou
+        password: "{{ secret }}"

@@ -1,0 +1,19 @@
+---
+- name: Example playbook new user created
+  hosts: webservers
+  
+
+  tasks:
+    - name: Load variable from encrypted file
+      include_vars:
+        file: secret
+    - name: Display encryted variables
+      debug:
+        msg: "{{secret}}"
+      no_log: true
+    - name: User gets created
+      user: 
+        name: "{{ username['test1']['uname']}}"
+        comment: "{{ username['test1']['description']}}"
+        password: "{{ username['test1']['password'] | password_hash('sha512') }}"
+        state: present

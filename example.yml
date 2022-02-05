@@ -1,0 +1,11 @@
+---
+- name: Example playbook new user created
+  hosts: webservers
+  vars:
+    username: test1
+
+  tasks:
+    - name: User gets created
+      user: 
+        name: "{{username}}"
+        state: present

@@ -1,0 +1,14 @@
+- name: Create users
+  hosts: webservers
+  vars:
+    myusers:
+      - bartosz
+      - janusz
+      - ania
+      - adam
+  tasks:
+    - name: create users
+      user:
+        name: "{{ item }}"
+        state: present
+      loop: "{{myusers}}"
