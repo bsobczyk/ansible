@@ -1,0 +1,12 @@
+---
+- name: Display some facts
+  hosts: all
+
+  tasks:
+    - name: debug all facts
+      debug: 
+        var: ansible_facts
+
+    - name: Display a list of all IPV4 addreses
+      debug:
+        var: ansible_facts['all_ipv4_addresses']

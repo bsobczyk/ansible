@@ -52,3 +52,6 @@ ansible-vault encrypt secretfile
 ansible-vault decrypt secretfile
 #change the password of vault
 ansible-vault rekey secretfile
+
+#gather all facts from host
+ansible <hostname> -m ansible.builtin.setup

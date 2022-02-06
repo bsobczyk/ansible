@@ -1,0 +1,13 @@
+---
+- name: Deploy file using Jinja2 template
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Setup etc hosts file
+      template:
+        src: hosts.j2
+        dest: /etc/hosts
+        owner: root
+        group: root 
+        mode: "0644"
